@@ -1,0 +1,21 @@
+outside_light:
+  module: outside_light
+  class: OutsideLight
+
+fajr_light:
+  module: fajr_light
+  class: FajrLight
+
+loft_mirror:
+  module: mirror_switch
+  class: MirrorSwitch
+  primary: light.loft_light_switch
+  mirrors:
+    - light.loft_lamp
+
+bedroom_mirror:
+  module: mirror_switch
+  class: MirrorSwitch
+  primary: light.bedroom_light_switch
+  mirrors:
+    - light.bedroom_lamp

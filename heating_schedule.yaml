@@ -1,0 +1,45 @@
+HeatingSchedule:
+  module: schedy
+  class: SchedyApp
+
+  actor_type: thermostat
+
+  schedule_prepend:
+    - expression: "50 if state('input_select.home_mode') == 'Vacation' else Next()"
+  
+  watched_entities:
+    - input_select.home_mode
+
+  rooms:
+    bedroom:
+      actors:
+        climate.bedroom_thermostat:
+
+      rescheduling_delay: 60
+
+      schedule:
+        - value: 70
+          rules:
+            - { start: "05:45", end: "07:30" } # Turn on in the morning
+        - value: 65
+    
+    loft:
+      actors:
+        climate.loft_thermostat:
+      
+      rescheduling_delay: 60
+
+      schedule:
+        - value: 70
+          rules:
+            - { start: "06:00", end: "08:00" }
+        - value: 65
+    
+    downstairs:
+      actors:
+        climate.downstairs_thermostat:
+
+      rescheduling_delay: 60
+
+      schedule:
+        - value: 65
