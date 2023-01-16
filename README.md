@@ -16,3 +16,12 @@ can override for 60 minutes
 ## Home Mode Manager
 If I'm out for more than 30 minutes, sets home to Away. If I'm out for more than 24 hours, sets home to Vacation. A 
 manual override of the home mode will ignore presence changes for 1 hour
+
+## Night Schedule
+Turn off most of the lights. Dim some lights. Turn off Bedroom thermostat display. And then at sunrise, reset some stuff
+
+## Away Schedule
+Turn off all the indoor lights
+
+## Home Schedule
+When I come back home, turn on the entryway light switch if it's dark outside
