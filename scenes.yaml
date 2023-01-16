@@ -1,0 +1,49 @@
+night_scene:
+  module: night
+  class: Night
+
+  control: input_boolean.bed_time_button
+
+  turn_off:
+    - light.bedroom_light_switch
+    - light.dining_room_light_switch
+    - light.kitchen_light_switch
+    - light.living_room_light_switch
+    - light.loft_light_switch
+    - light.mysa_87ceb1_display
+  
+  dimmed:
+    - light.stairs_light_switch
+    - light.entryway_light_switch
+  
+  reset_brightness_at_sunrise:
+    - light.stairs_light_switch
+    - light.entryway_light_switch
+  
+  on_at_sunrise:
+    - light.mysa_87ceb1_display
+
+presence:
+  module: manage_home_mode
+  class: ManageHomeMode
+
+away_scene:
+  module: away
+  class: Away
+
+  turn_off:
+    - light.bedroom_light_switch
+    - light.dining_room_light_switch
+    - light.entryway_light_switch
+    - light.kitchen_light_switch
+    - light.landing_light_switch
+    - light.living_room_light_switch
+    - light.loft_light_switch
+    - light.stairs_light_switch
+
+home_scene:
+  module: home
+  class: Home
+
+  light: light.entryway_light_switch
+

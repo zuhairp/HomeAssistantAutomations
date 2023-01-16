@@ -12,3 +12,7 @@ Mirrors lamp state from light switch state. So if I turn on the bedroom or loft 
 ## Heating Schedule
 Schedy based heating schedule. Turns on bedroom heater around the time I wake up. Otherwise, it stays at 65 and I
 can override for 60 minutes
+
+## Home Mode Manager
+If I'm out for more than 30 minutes, sets home to Away. If I'm out for more than 24 hours, sets home to Vacation. A 
+manual override of the home mode will ignore presence changes for 1 hour

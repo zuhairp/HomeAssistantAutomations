@@ -1,4 +1,7 @@
 import appdaemon.plugins.hass.hassapi as hass
+from dateutil import parser
+from datetime import datetime
+import pytz
 
 class FajrLight(hass.Hass):
     def initialize(self):
@@ -13,7 +16,11 @@ class FajrLight(hass.Hass):
 
     def schedule_fajr(self, entity, attribute, old, new, kwargs):
         self.log(f"Scheduling light for {new}")
-        self.run_at(self.at_fajr, new)
+        dt = parser.parse(new)
+        if dt > datetime.now(pytz.utc):
+            self.run_at(self.at_fajr, dt)
+        else:
+            self.log("Fajr time already past. Will reschedule at midnight")
 
     def at_fajr(self, kwargs):
         self.log("Turned on light")

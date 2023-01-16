@@ -30,11 +30,8 @@ HeatingSchedule:
       rescheduling_delay: 60
 
       schedule:
-        - value: 70
-          rules:
-            - { start: "06:00", end: "08:00" }
         - value: 65
-    
+
     downstairs:
       actors:
         climate.downstairs_thermostat:
@@ -42,4 +39,8 @@ HeatingSchedule:
       rescheduling_delay: 60
 
       schedule:
+        - value: 70
+          rules:
+            - { start: "06:00", end: "08:00" }
         - value: 65
+    

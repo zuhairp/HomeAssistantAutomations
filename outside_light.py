@@ -9,16 +9,16 @@ class OutsideLight(hass.Hass):
 
         if self.sun_down():
             self.log("Sun is currently down")
-            self.turn_on(self.entry_light)
+            self.turn_on(self.light)
         else:
             self.log("Sun is currently up")
-            self.turn_off(self.entry_light)
+            self.turn_off(self.light)
         
     def at_sunset(self, kwargs):
-        self.turn_on(self.entry_light)
+        self.turn_on(self.light)
         self.log("Turned on outside light")
 
     def at_sunrise(self, kwargs):
-        self.turn_off(self.entry_light)
+        self.turn_off(self.light)
         self.log("Turned off outside light")
     
